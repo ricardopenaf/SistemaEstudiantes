@@ -1,0 +1,188 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SistemaEstudiantes
+</name>
+</assembly>
+<members>
+<member name="M:SistemaEstudiantes.Controllers.EstudianteController.GuardarNota(SistemaEstudiantes.Calificacion)">
+ <summary>
+ Recibe el objeto Calificacion con todos los campos vía AJAX y llama al BLL.
+ </summary>
+</member>
+<member name="T:SistemaEstudiantes.CalificacionDAL">
+ <summary>
+ Capa de Acceso a Datos para Calificaciones
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionDAL.ObtenerTodos">
+ <summary>
+ Obtiene todas las calificaciones registradas
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionDAL.ObtenerPorId(System.Int32)">
+ <summary>
+ Obtiene una calificación por su ID
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionDAL.ObtenerPorEstudiante(System.Int32)">
+ <summary>
+ Obtiene todas las calificaciones de un estudiante específico
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionDAL.Insertar(SistemaEstudiantes.Calificacion)">
+ <summary>
+ Inserta una nueva calificación en la base de datos, incluyendo Periodo y Observaciones.
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionDAL.Actualizar(SistemaEstudiantes.Calificacion)">
+ <summary>
+ Actualiza una calificación existente
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionDAL.Eliminar(System.Int32)">
+ <summary>
+ Elimina una calificación por su ID
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionDAL.MapearCalificacion(System.Data.SqlClient.SqlDataReader)">
+ <summary>
+ Método privado para mapear los datos del lector a un objeto Calificacion
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.ConexionDB.ObtenerCadenaConexion">
+ <summary>
+ Obtiene la cadena de conexión nombrada del archivo de configuración.
+ </summary>
+ <returns>La cadena de conexión como String.</returns>
+</member>
+<member name="M:SistemaEstudiantes.ConexionDB.ObtenerConexion">
+ <summary>
+ Crea y devuelve un nuevo objeto SqlConnection utilizando la cadena de conexión del web.config.
+ </summary>
+ <returns>Un objeto SqlConnection listo para ser abierto.</returns>
+</member>
+<member name="M:SistemaEstudiantes.CursoDAL.ObtenerTodos">
+ <summary>
+ Obtiene todos los cursos de la base de datos ejecutando el stored procedure SP_ListaCursos.
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteDAL.ObtenerTodos">
+ <summary>
+ Obtiene todos los estudiantes activos
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteDAL.ObtenerPorId(System.Int32)">
+ <summary>
+ Obtiene un estudiante por su ID
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteDAL.ObtenerPorNota(System.Decimal)">
+ <summary>
+ Obtiene estudiantes con nota promedio mayor o igual a la especificada
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteDAL.Insertar(SistemaEstudiantes.Estudiante)">
+ <summary>
+ Inserta un nuevo estudiante
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteDAL.Actualizar(SistemaEstudiantes.Estudiante)">
+ <summary>
+ Actualiza un estudiante existente
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteDAL.Eliminar(System.Int32)">
+ <summary>
+ Elimina (lógicamente) un estudiante
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteDAL.MapearEstudiante(System.Data.SqlClient.SqlDataReader)">
+ <summary>
+ Mapea un SqlDataReader a un objeto Estudiante
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionBLL.ObtenerTodos">
+ <summary>
+ Obtiene todas las calificaciones
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionBLL.ObtenerPorId(System.Int32)">
+ <summary>
+ Obtiene una calificación por ID
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionBLL.ObtenerPorEstudiante(System.Int32)">
+ <summary>
+ Obtiene calificaciones por estudiante
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionBLL.Insertar(SistemaEstudiantes.Calificacion)">
+ <summary>
+ Inserta una nueva calificación con validaciones
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionBLL.Actualizar(SistemaEstudiantes.Calificacion)">
+ <summary>
+ Actualiza una calificación existente con validaciones
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionBLL.Eliminar(System.Int32)">
+ <summary>
+ Elimina una calificación
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.CalificacionBLL.ValidarCalificacion(SistemaEstudiantes.Calificacion)">
+ <summary>
+ Valida los datos de la calificación
+ </summary>
+</member>
+<member name="F:SistemaEstudiantes.CursoBLL._cursoDAL">
+ <summary>
+ Obtiene todos los estudiantes activos
+ </summary>
+ 
+</member>
+<member name="T:SistemaEstudiantes.EstudianteBLL">
+ <summary>
+ Capa de Lógica de Negocio para Estudiantes
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteBLL.ObtenerTodos">
+ <summary>
+ Obtiene todos los estudiantes activos
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteBLL.ObtenerPorId(System.Int32)">
+ <summary>
+ Obtiene un estudiante por su ID
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteBLL.ObtenerPorNota(System.Decimal)">
+ <summary>
+ Obtiene los estudiantes cuyo promedio de notas es mayor o igual a la nota mínima indicada
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteBLL.Insertar(SistemaEstudiantes.Estudiante)">
+ <summary>
+ Inserta un nuevo estudiante (con validaciones de negocio)
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteBLL.Actualizar(SistemaEstudiantes.Estudiante)">
+ <summary>
+ Actualiza la información de un estudiante existente (con validaciones)
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteBLL.Eliminar(System.Int32)">
+ <summary>
+ Elimina (lógicamente) un estudiante
+ </summary>
+</member>
+<member name="M:SistemaEstudiantes.EstudianteBLL.ValidarEstudiante(SistemaEstudiantes.Estudiante)">
+ <summary>
+ Valida los datos de un estudiante antes de insertarlo o actualizarlo
+ </summary>
+</member>
+</members>
+</doc>
